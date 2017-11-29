@@ -6,5 +6,13 @@
     {
         "merged": "/Users/ConorBelfield/Downloads/Chess/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
         "source": "/Users/ConorBelfield/Downloads/Chess/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ConorBelfield/Chess/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/ConorBelfield/Chess/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ConorBelfield/Chess/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/Users/ConorBelfield/Chess/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     }
 ]

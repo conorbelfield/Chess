@@ -2343,7 +2343,6 @@ containing a value of this type.
         public static final int cancel_action=0x7f0b0063;
         public static final int chains=0x7f0b0010;
         public static final int checkbox=0x7f0b0046;
-        public static final int chessBoard=0x7f0b005e;
         public static final int chronometer=0x7f0b006b;
         public static final int collapseActionView=0x7f0b0026;
         public static final int contentPanel=0x7f0b0039;
@@ -2419,6 +2418,7 @@ containing a value of this type.
         public static final int text2=0x7f0b0072;
         public static final int textSpacerNoButtons=0x7f0b003d;
         public static final int textSpacerNoTitle=0x7f0b003c;
+        public static final int textView=0x7f0b005e;
         public static final int time=0x7f0b006a;
         public static final int title=0x7f0b0035;
         public static final int titleDividerNoCustom=0x7f0b0044;

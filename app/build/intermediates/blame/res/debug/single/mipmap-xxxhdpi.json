@@ -1,10 +1,18 @@
 [
     {
+        "merged": "/Users/ConorBelfield/Chess/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
+        "source": "/Users/ConorBelfield/Chess/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "/Users/ConorBelfield/Downloads/Chess/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
         "source": "/Users/ConorBelfield/Downloads/Chess/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/ConorBelfield/Downloads/Chess/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/Users/ConorBelfield/Downloads/Chess/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ConorBelfield/Chess/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/ConorBelfield/Chess/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]
