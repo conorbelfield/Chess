@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/ConorBelfield/Downloads/Chess/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\Ryan\\AndroidStudioProjects\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/ConorBelfield/.android/build-cache/0301c62f10170692c62436bab57f7efbd74cabf0/output/res/values/values.xml",
+                    "file": "C:\\Users\\Ryan\\.android\\build-cache\\12680f8baff5866a898bfa71227e584a93337519\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/Users/ConorBelfield/Chess/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,31 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/ConorBelfield/.android/build-cache/0301c62f10170692c62436bab57f7efbd74cabf0/output/res/values/values.xml",
+                    "file": "C:\\Users\\ConorBelfield\\.android\\build-cache\\0301c62f10170692c62436bab57f7efbd74cabf0\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ConorBelfield\\Downloads\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\ConorBelfield\\.android\\build-cache\\0301c62f10170692c62436bab57f7efbd74cabf0\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

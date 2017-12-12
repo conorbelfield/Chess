@@ -26,7 +26,20 @@ public class ChessBoardView extends View {
     private Paint paintBgBlue;
     private Paint paintBgYellow;
     private Paint paintLine;
-    private int[][] squareColors;
+    private int[][] squareColors = new int[8][8];
+
+    private Bitmap bitmapWBishop;
+    private Bitmap bitmapBBishop;
+    private Bitmap bitmapWKing;
+    private Bitmap bitmapBKing;
+    private Bitmap bitmapWKnight;
+    private Bitmap bitmapBKnight;
+    private Bitmap bitmapWPawn;
+    private Bitmap bitmapBPawn;
+    private Bitmap bitmapWQueen;
+    private Bitmap bitmapBQueen;
+    private Bitmap bitmapWRook;
+    private Bitmap bitmapBRook;
 
     public ChessBoardView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -58,12 +71,49 @@ public class ChessBoardView extends View {
         paintBgYellow.setStyle(Paint.Style.FILL);
 
         //bitmapBg = BitmapFactory.decodeResource(getResources(), R.drawable.background);
+        bitmapWBishop = BitmapFactory.decodeResource(getResources(), R.drawable.bishop);
+        bitmapBBishop = BitmapFactory.decodeResource(getResources(), R.drawable.black_bishop);
+        bitmapWKing = BitmapFactory.decodeResource(getResources(), R.drawable.white_king);
+        bitmapBKing = BitmapFactory.decodeResource(getResources(), R.drawable.black_king);
+        bitmapWKnight = BitmapFactory.decodeResource(getResources(), R.drawable.white_knight);
+        bitmapBKnight = BitmapFactory.decodeResource(getResources(), R.drawable.black_knight);
+        bitmapWPawn = BitmapFactory.decodeResource(getResources(), R.drawable.white_pawn);
+        bitmapBPawn = BitmapFactory.decodeResource(getResources(), R.drawable.black_pawn);
+        bitmapWQueen = BitmapFactory.decodeResource(getResources(), R.drawable.white_queen);
+        bitmapBQueen = BitmapFactory.decodeResource(getResources(), R.drawable.black_queen);
+        bitmapWRook = BitmapFactory.decodeResource(getResources(), R.drawable.white_rook);
+        bitmapBRook = BitmapFactory.decodeResource(getResources(), R.drawable.black_rook_backup);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         //bitmapBg = Bitmap.createScaledBitmap(bitmapBg, getWidth(), getHeight(), false);
+        bitmapWBishop = Bitmap.createScaledBitmap(bitmapWBishop, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBBishop = Bitmap.createScaledBitmap(bitmapBBishop, getWidth()/8,
+                getHeight()/8, false);
+        bitmapWKing = Bitmap.createScaledBitmap(bitmapWKing, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBKing = Bitmap.createScaledBitmap(bitmapBKing, getWidth()/8,
+                getHeight()/8, false);
+        bitmapWKnight = Bitmap.createScaledBitmap(bitmapWKnight, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBKnight = Bitmap.createScaledBitmap(bitmapBKnight, getWidth()/8,
+                getHeight()/8, false);
+        bitmapWPawn = Bitmap.createScaledBitmap(bitmapWPawn, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBPawn = Bitmap.createScaledBitmap(bitmapBPawn, getWidth()/8,
+                getHeight()/8, false);
+        bitmapWQueen = Bitmap.createScaledBitmap(bitmapWQueen, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBQueen = Bitmap.createScaledBitmap(bitmapBQueen, getWidth()/8,
+                getHeight()/8, false);
+        bitmapWRook = Bitmap.createScaledBitmap(bitmapWRook, getWidth()/8,
+                getHeight()/8, false);
+        bitmapBRook = Bitmap.createScaledBitmap(bitmapBRook, getWidth()/8,
+                getHeight()/8, false);
+
     }
 
     @Override
@@ -80,40 +130,40 @@ public class ChessBoardView extends View {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackPawn) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBPawn,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackRook) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBRook,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackBishop) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBBishop,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackKnight) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBKnight,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackQueen) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBQueen,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.blackKing) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapBKing,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whitePawn) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWPawn,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whiteRook) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWRook,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whiteKnight) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWKnight,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whiteBishop) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWBishop,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whiteQueen) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWQueen,i*getWidth()/8,j*getHeight()/8, null);
                 }
                 else if (ChessModel.getInstance().getFieldContent(i,j) == ChessModel.whiteKing) {
-                    // place piece. use 64 image views? use 32 that change location?
+                    canvas.drawBitmap(bitmapWKing,i*getWidth()/8,j*getHeight()/8, null);
                 }
 
             }

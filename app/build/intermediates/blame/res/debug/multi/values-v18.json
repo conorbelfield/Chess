@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/ConorBelfield/Downloads/Chess/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+        "outputFile": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/ConorBelfield/.android/build-cache/e7303a138cdebee2b6cb9785458549c62c87be09/output/res/values-v18/values-v18.xml",
+                    "file": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/Users/ConorBelfield/Chess/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+        "outputFile": "C:\\Users\\ConorBelfield\\Downloads\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,31 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/ConorBelfield/.android/build-cache/e7303a138cdebee2b6cb9785458549c62c87be09/output/res/values-v18/values-v18.xml",
+                    "file": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\values-v18\\values-v18.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 48,
+                        "endOffset": 99
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Ryan\\AndroidStudioProjects\\Chess\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 48,
+                    "endOffset": 99
+                },
+                "from": {
+                    "file": "C:\\Users\\Ryan\\.android\\build-cache\\5b38c82903b615ced7df896cb6da76fb47a987d4\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
