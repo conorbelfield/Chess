@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
         "merged": "C:\\Users\\ConorBelfield\\Downloads\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
@@ -12,15 +16,11 @@
         "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Ryan\\AndroidStudioProjects\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\Users\\Ryan\\.android\\build-cache\\5b38c82903b615ced7df896cb6da76fb47a987d4\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\ConorBelfield\\Chess\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\ConorBelfield\\.android\\build-cache\\e7303a138cdebee2b6cb9785458549c62c87be09\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

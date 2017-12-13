@@ -30,5 +30,16 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+        TwoPlayerRemote = (Button) findViewById(R.id.twoPlayRemBtn);
+        TwoPlayerRemote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentDetails = new Intent();
+                intentDetails.setClass(WelcomeActivity.this,
+                        LoginActivity.class);
+                startActivity(intentDetails);
+            }
+        });
+
     }
 }

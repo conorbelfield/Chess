@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
@@ -13,8 +13,29 @@ ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifes
 	android:versionCode
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:4:5-66
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:18:5-66
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:5:5-20:19
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:5:5-25:19
+MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\Ryan\.android\build-cache\270a6d64e30864b4e362fa9e40bece95df7567a4\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Ryan\.android\build-cache\851cf33fda39d8569ba3a7b5eae7809615739d6e\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Ryan\.android\build-cache\cd8d063bbe0af5a878493d26c47b2f3c991b0669\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:22:5-28:19
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Ryan\.android\build-cache\108681aae100a3df9aee6705588b50ea783dbe0e\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Ryan\.android\build-cache\cd28edeb95602b46fbc6795b3fd075b9493d7361\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\55272b1ffdf2f4cd2ee3f2891128221118fa66f4\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\0c2584eaa007416530c395e0a3a4ba58543634e9\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\8cf2741963ba62465769785257fdb0a6f8206b91\output\AndroidManifest.xml:29:5-20
@@ -24,6 +45,7 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Ryan
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\51955b1e3265791f9112e61da09594d60fa4c3d9\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\ae87fc1233d0dd63effe8f29f3b2e6976d9a122f\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d891d9988a2112a510ef8caa9bc4ad6606bf155b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\c008580032aabd17ebed02f504035acf852dd572\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ryan\.android\build-cache\ff327285e4b14f0cd2ebf5ca875c3233901cab1f\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:8:9-41
@@ -52,11 +74,43 @@ ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifes
 	android:name
 		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:16:27-74
 activity#com.ait.android.chess.Activities.TwoPlayerLocalActivity
-ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:19:9-80
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:19:9-71
 	android:name
 		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:19:19-68
+activity#com.ait.android.chess.Activities.TwoPlayerRemoteActivity
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:20:9-72
+	android:name
+		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:20:19-69
+activity#com.ait.android.chess.Activities.LoginActivity
+ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:21:9-24:68
+	android:label
+		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:23:13-57
+	android:theme
+		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:24:13-56
+	android:name
+		ADDED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml:22:13-53
 uses-sdk
 INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\Ryan\.android\build-cache\270a6d64e30864b4e362fa9e40bece95df7567a4\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Ryan\.android\build-cache\851cf33fda39d8569ba3a7b5eae7809615739d6e\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Ryan\.android\build-cache\cd8d063bbe0af5a878493d26c47b2f3c991b0669\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-module:9.6.0] C:\Users\Ryan\.android\build-cache\8ca44b648b45ee25814460249ec86d2839735ec0\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-database:9.6.0] C:\Users\Ryan\.android\build-cache\e59d006a7eba8ec6f1ae43ec3dc642e4e46b4248\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:9.6.0] C:\Users\Ryan\.android\build-cache\0877bcaa01d76a5555966a68eee843b8c96e3fff\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage:9.6.0] C:\Users\Ryan\.android\build-cache\1b3903a9333a1e44b4bb7ec2bff8233001135e0b\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:9.6.0] C:\Users\Ryan\.android\build-cache\e99fe6b93ace82445b8cb4da97c596df0b5f86eb\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:20:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Ryan\.android\build-cache\108681aae100a3df9aee6705588b50ea783dbe0e\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Ryan\.android\build-cache\cd28edeb95602b46fbc6795b3fd075b9493d7361\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\01d73d5aae9db0e18be3dd4efd6a38259ba52968\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\55272b1ffdf2f4cd2ee3f2891128221118fa66f4\output\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\Ryan\.android\build-cache\9c8bb7f8459397bd9b944999b63f26b2610aee79\output\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\0c2584eaa007416530c395e0a3a4ba58543634e9\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\8cf2741963ba62465769785257fdb0a6f8206b91\output\AndroidManifest.xml:21:5-23:63
@@ -66,17 +120,157 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Ryan
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\51955b1e3265791f9112e61da09594d60fa4c3d9\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\ae87fc1233d0dd63effe8f29f3b2e6976d9a122f\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d891d9988a2112a510ef8caa9bc4ad6606bf155b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\c008580032aabd17ebed02f504035acf852dd572\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ryan\.android\build-cache\ff327285e4b14f0cd2ebf5ca875c3233901cab1f\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ryan\AndroidStudioProjects\Chess\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Ryan\.android\build-cache\6218d79fb942eadae2284ecb4511554412ae7e29\output\AndroidManifest.xml:19:19-85
+service#com.google.firebase.crash.internal.service.FirebaseCrashReceiverService
+ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:24:9-117
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:24:80-115
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:24:18-79
+service#com.google.firebase.crash.internal.service.FirebaseCrashSenderService
+ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:26:9-115
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:26:78-113
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Ryan\.android\build-cache\361bc01863e1dc5bd990772715ba09b6c3e03392\output\AndroidManifest.xml:26:18-77
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:21:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Ryan\.android\build-cache\7880483fea7b68b230fac0a4a41a061125fe5107\output\AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Ryan\.android\build-cache\c4046f80a12ec5a0ce8a3c82dc093c159ec87061\output\AndroidManifest.xml:32:16-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:30:9-36:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:31:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:32:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:33:17-85
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:33:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:34:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:40:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:40:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:40:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:44:9-48:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:44:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:44:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:45:13-47:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:45:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:46:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Ryan\.android\build-cache\0400a74c28667ccb97c3cf05e70632051c6d8479\output\AndroidManifest.xml:46:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:6:9-175
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:6:125-149
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:6:150-173
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Ryan\.android\build-cache\df8d453bd329b062606cf61b20fdc4b528bd305f\output\AndroidManifest.xml:6:79-124
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Ryan\.android\build-cache\cd28edeb95602b46fbc6795b3fd075b9493d7361\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Ryan\.android\build-cache\cd28edeb95602b46fbc6795b3fd075b9493d7361\output\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Ryan\.android\build-cache\cd28edeb95602b46fbc6795b3fd075b9493d7361\output\AndroidManifest.xml:20:20-65
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\01d73d5aae9db0e18be3dd4efd6a38259ba52968\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\55272b1ffdf2f4cd2ee3f2891128221118fa66f4\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\0c2584eaa007416530c395e0a3a4ba58543634e9\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\8cf2741963ba62465769785257fdb0a6f8206b91\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\4b3e868cbeed29af37e3a604876346388e622af4\output\AndroidManifest.xml:25:5-27:41
@@ -85,7 +279,8 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Ryan
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\51955b1e3265791f9112e61da09594d60fa4c3d9\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\ae87fc1233d0dd63effe8f29f3b2e6976d9a122f\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d891d9988a2112a510ef8caa9bc4ad6606bf155b\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\c008580032aabd17ebed02f504035acf852dd572\output\AndroidManifest.xml:22:5-24:41
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\5b38c82903b615ced7df896cb6da76fb47a987d4\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Ryan\.android\build-cache\d9123bff90238e11b62fe3e10739c1ffdf45c230\output\AndroidManifest.xml:26:9-47

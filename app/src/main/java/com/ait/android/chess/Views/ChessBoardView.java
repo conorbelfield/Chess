@@ -8,11 +8,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
-import com.ait.android.chess.ChessModel;
+import com.ait.android.chess.Data.ChessModel;
 import com.ait.android.chess.R;
+
+import static com.ait.android.chess.R.id.layoutContent;
 
 
 /**
@@ -25,6 +29,7 @@ public class ChessBoardView extends View {
     private Paint paintBgWhite;
     private Paint paintBgBlue;
     private Paint paintBgYellow;
+    private Paint paintGreen;
     private Paint paintLine;
     private int[][] squareColors = new int[8][8];
 
@@ -41,14 +46,17 @@ public class ChessBoardView extends View {
     private Bitmap bitmapWRook;
     private Bitmap bitmapBRook;
 
+    private int winner = -1;
+
     public ChessBoardView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        for (int i = 0; i < 8; i ++) {
-            for (int j = 0; j < 8; j++) {
-                squareColors[i][j] = 0;
-            }
-        }
+        resetSquareColors();
+
+        paintGreen = new Paint();
+        paintGreen.setColor(Color.GREEN);
+        paintGreen.setTextSize(200);
+
         paintBgBlack = new Paint();
         paintBgBlack.setColor(Color.DKGRAY);
         paintBgBlack.setStyle(Paint.Style.FILL);
@@ -124,7 +132,7 @@ public class ChessBoardView extends View {
         canvas.drawRect(0, 0, getWidth(), getHeight(), paintBgBlack);
 
         // draw board
-        drawGameArea(canvas, squareColors);
+        drawGameArea(canvas);
 
         // draw players
         for (int i = 0; i < 8; i++) {
@@ -167,6 +175,13 @@ public class ChessBoardView extends View {
                 }
 
             }
+
+            if (isWinner() > 0) {
+                if (winner == ChessModel.WHITE)
+                    canvas.drawText("White Wins!", 0,500, paintGreen);
+                if (winner == ChessModel.BLACK)
+                    canvas.drawText("Black Wins!", 0, 500, paintGreen);
+            }
         }
 
 
@@ -183,138 +198,378 @@ public class ChessBoardView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            int tX = ((int) event.getX()) / (getWidth() / 8);
-            int tY = ((int) event.getY()) / (getHeight() / 8);
 
-            if (nextTouch == SELECT) {
-                if (ChessModel.getInstance().getFieldContent(tX, tY) != ChessModel.EMPTY) {
-                    squareColors[tX][tY] = ChessModel.YELLOW;
+            if (winner < 0) {
+                int tX = ((int) event.getX()) / (getWidth() / 8);
+                int tY = ((int) event.getY()) / (getHeight() / 8);
+
+                if (nextTouch == SELECT) {
+                    if (getPieceColor(ChessModel.getInstance().getFieldContent(tX, tY)) ==
+                            ChessModel.getInstance().getNextPlayer()) {
+                        squareColors[tX][tY] = ChessModel.YELLOW;
 
 
-                    // Black pawn
-                    if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackPawn) {
-                        if (ChessModel.getInstance().getFieldContent(tX, tY - 1) == ChessModel.EMPTY) {
-                            squareColors[tX][tY - 1] = ChessModel.BLUE;
-                            if (tY == 7 && ChessModel.getInstance().getFieldContent(tX, tY - 2) == ChessModel.EMPTY) {
-                                squareColors[tX][tY - 2] = ChessModel.BLUE;
+                        // Black pawn
+                        if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackPawn) {
+                            if (ChessModel.getInstance().getFieldContent(tX - 1, tY) == ChessModel.EMPTY) {
+                                squareColors[tX - 1][tY] = ChessModel.BLUE;
+                                if (tX == 6 && ChessModel.getInstance().getFieldContent(tX - 2, tY) == ChessModel.EMPTY) {
+                                    squareColors[tX - 2][tY] = ChessModel.BLUE;
+                                }
+                            }
+                            if (tX - 1 > -1 && tY - 1 > -1 && ChessModel.getInstance().getFieldContent(tX - 1, tY - 1) < 6) {
+                                squareColors[tX - 1][tY - 1] = ChessModel.BLUE;
+                            }
+                            if (tX - 1 < 8 && tY + 1 < 8 && ChessModel.getInstance().getFieldContent(tX - 1, tY + 1) < 6) {
+                                squareColors[tX - 1][tY + 1] = ChessModel.BLUE;
+                            }
+
+                        }
+//
+                        // White pawn
+                        else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whitePawn) {
+                            if (ChessModel.getInstance().getFieldContent(tX + 1, tY) == ChessModel.EMPTY) {
+                                squareColors[tX + 1][tY] = ChessModel.BLUE;
+                                if (tX == 1 && ChessModel.getInstance().getFieldContent(tX + 2, tY) == ChessModel.EMPTY) {
+                                    squareColors[tX + 2][tY] = ChessModel.BLUE;
+                                }
+                            }
+                            if (tX - 1 > -1 && tY - 1 > -1 && ChessModel.getInstance().getFieldContent(tX + 1, tY - 1) > 5 &&
+                                    ChessModel.getInstance().getFieldContent(tX + 1, tY - 1) != ChessModel.EMPTY) {
+                                squareColors[tX + 1][tY - 1] = ChessModel.BLUE;
+                            }
+                            if (tX - 1 < 8 && tY + 1 < 8 && ChessModel.getInstance().getFieldContent(tX + 1, tY + 1) != ChessModel.EMPTY
+                                    && ChessModel.getInstance().getFieldContent(tX + 1, tY - 1) > 5) {
+                                squareColors[tX + 1][tY + 1] = ChessModel.BLUE;
                             }
                         }
-                        if (tX > 0 && ChessModel.getInstance().getFieldContent(tX - 1, tY - 1) != ChessModel.EMPTY) {
-                            squareColors[tX - 1][tY - 1] = ChessModel.BLUE;
+
+
+                        // White Rook
+                        else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteRook) {
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if ((i != 0 || j != 0) && (i == 0 || j == 0)) {
+                                        int x = tX;
+                                        int y = tY;
+                                        while (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                == ChessModel.EMPTY) {
+                                            x += i;
+                                            y += j;
+
+                                            squareColors[x][y] = ChessModel.BLUE;
+
+                                        }
+                                        if (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                != ChessModel.EMPTY && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                > 5) {
+                                            squareColors[x + i][y + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        if (tX < 7 && ChessModel.getInstance().getFieldContent(tX + 1, tY - 1) != ChessModel.EMPTY) {
-                            squareColors[tX + 1][tY - 1] = ChessModel.BLUE;
+
+                        // Black Rook
+                        else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackRook) {
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if ((i != 0 || j != 0) && (i == 0 || j == 0)) {
+                                        int x = tX;
+                                        int y = tY;
+                                        while (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                == ChessModel.EMPTY) {
+                                            x += i;
+                                            y += j;
+
+                                            squareColors[x][y] = ChessModel.BLUE;
+
+                                        }
+                                        if (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                < 6) {
+                                            squareColors[x + i][y + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteBishop) {
+                            for (int i = -1; i < 2; i += 2) {
+                                for (int j = -1; j < 2; j += 2) {
+
+                                    int x = tX;
+                                    int y = tY;
+                                    while (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            == ChessModel.EMPTY) {
+                                        x += i;
+                                        y += j;
+
+                                        squareColors[x][y] = ChessModel.BLUE;
+
+                                    }
+                                    if (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            != ChessModel.EMPTY && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            > 5) {
+                                        squareColors[x + i][y + j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackBishop) {
+                            for (int i = -1; i < 2; i += 2) {
+                                for (int j = -1; j < 2; j += 2) {
+
+                                    int x = tX;
+                                    int y = tY;
+                                    while (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            == ChessModel.EMPTY) {
+                                        x += i;
+                                        y += j;
+
+                                        squareColors[x][y] = ChessModel.BLUE;
+
+                                    }
+                                    if (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            < 6) {
+                                        squareColors[x + i][y + j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteQueen) {
+                            for (int i = -1; i < 2; i += 2) {
+                                for (int j = -1; j < 2; j += 2) {
+
+                                    int x = tX;
+                                    int y = tY;
+                                    while (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            == ChessModel.EMPTY) {
+                                        x += i;
+                                        y += j;
+
+                                        squareColors[x][y] = ChessModel.BLUE;
+
+                                    }
+                                    if (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            != ChessModel.EMPTY && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            > 5) {
+                                        squareColors[x + i][y + j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if ((i != 0 || j != 0) && (i == 0 || j == 0)) {
+                                        int x = tX;
+                                        int y = tY;
+                                        while (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                == ChessModel.EMPTY) {
+                                            x += i;
+                                            y += j;
+
+                                            squareColors[x][y] = ChessModel.BLUE;
+
+                                        }
+                                        if (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                != ChessModel.EMPTY && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                > 5) {
+                                            squareColors[x + i][y + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackQueen) {
+                            for (int i = -1; i < 2; i += 2) {
+                                for (int j = -1; j < 2; j += 2) {
+
+                                    int x = tX;
+                                    int y = tY;
+                                    while (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            == ChessModel.EMPTY) {
+                                        x += i;
+                                        y += j;
+
+                                        squareColors[x][y] = ChessModel.BLUE;
+
+                                    }
+                                    if (x + i < 8 && x + i > -1
+                                            && y + j < 8 && y + j > -1
+                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                            < 6) {
+                                        squareColors[x + i][y + j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if ((i != 0 || j != 0) && (i == 0 || j == 0)) {
+                                        int x = tX;
+                                        int y = tY;
+                                        while (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                == ChessModel.EMPTY) {
+                                            x += i;
+                                            y += j;
+
+
+                                            squareColors[x][y] = ChessModel.BLUE;
+
+                                        }
+                                        if (x + i < 8 && x + i > -1
+                                                && y + j < 8 && y + j > -1
+                                                && ChessModel.getInstance().getFieldContent(x + i, y + j)
+                                                < 6) {
+                                            squareColors[x + i][y + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
+
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteKing) {
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if (i != 0 || j != 0) {
+                                        if (tX + i < 8 && tX + i > -1 && tY + j < 8 && tY + j > -1
+                                                && ChessModel.getInstance().getFieldContent(tX + i, tY + j) > 5) {
+                                            squareColors[tX + i][tY + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackKing) {
+                            for (int i = -1; i < 2; i++) {
+                                for (int j = -1; j < 2; j++) {
+                                    if (i != 0 || j != 0) {
+                                        if (tX + i < 8 && tX + i > -1 && tY + j < 8 && tY + j > -1
+                                                && (ChessModel.getInstance().getFieldContent(tX + i, tY + j) < 6
+                                                || ChessModel.getInstance().getFieldContent(tX + i, tY + j) == ChessModel.EMPTY)) {
+                                            squareColors[tX + i][tY + j] = ChessModel.BLUE;
+                                        }
+                                    }
+                                }
+                            }
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteKnight) {
+                            for (int i = -2; i < 3; i++) {
+                                if (i != 0) {
+                                    int j = 3 - Math.abs(i);
+                                    if (tX + i < 8 && tX + i > -1 && tY + j < 8 && tY + j > -1 &&
+                                            ChessModel.getInstance().getFieldContent(tX + i, tY + j) > 5) {
+                                        squareColors[tX + i][tY + j] = ChessModel.BLUE;
+                                    }
+                                    if (tX + i < 8 && tX + i > -1 && tY - j < 8 && tY - j > -1 &&
+                                            ChessModel.getInstance().getFieldContent(tX + i, tY - j) > 5) {
+                                        squareColors[tX + i][tY - j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+                        } else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackKnight) {
+                            for (int i = -2; i < 3; i++) {
+                                if (i != 0) {
+                                    int j = 3 - Math.abs(i);
+                                    if (tX + i < 8 && tX + i > -1 && tY + j < 8 && tY + j > -1 &&
+                                            (ChessModel.getInstance().getFieldContent(tX + i, tY + j) < 6 ||
+                                                    ChessModel.getInstance().getFieldContent(tX + i, tY + j)
+                                                            == ChessModel.EMPTY)) {
+                                        squareColors[tX + i][tY + j] = ChessModel.BLUE;
+                                    }
+                                    if (tX + i < 8 && tX + i > -1 && tY - j < 8 && tY - j > -1 &&
+                                            (ChessModel.getInstance().getFieldContent(tX + i, tY - j) < 6 ||
+                                                    ChessModel.getInstance().getFieldContent(tX + i, tY - j)
+                                                            == ChessModel.EMPTY)) {
+                                        squareColors[tX + i][tY - j] = ChessModel.BLUE;
+                                    }
+                                }
+                            }
+                        }
+                        nextTouch = MOVE;
+                    }
+
+
+                } else {
+                    int toMoveX = -1;
+                    int toMoveY = -1;
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if (squareColors[i][j] == ChessModel.YELLOW) {
+                                toMoveX = i;
+                                toMoveY = j;
+                            }
                         }
                     }
 
-                    // White pawn
-                    else if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whitePawn) {
-                        if (ChessModel.getInstance().getFieldContent(tX, tY - 1) == ChessModel.EMPTY) {
-                            squareColors[tX][tY + 1] = ChessModel.BLUE;
-                            if (tY == 7 && ChessModel.getInstance().getFieldContent(tX, tY - 2) == ChessModel.EMPTY) {
-                                squareColors[tX][tY + 2] = ChessModel.BLUE;
-                            }
+                    if (squareColors[tX][tY] == ChessModel.BLUE) {
+                        ChessModel.getInstance().setFieldContent(tX, tY, ChessModel.getInstance().getFieldContent(toMoveX, toMoveY));
+                        ChessModel.getInstance().setFieldContent(toMoveX, toMoveY, ChessModel.EMPTY);
+                        ChessModel.getInstance().switchNextPlayer();
+                        if (tX == 0 && ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackPawn) {
+                            ChessModel.getInstance().setFieldContent(tX, tY, ChessModel.blackQueen);
                         }
-                        if (tX < 7 && ChessModel.getInstance().getFieldContent(tX + 1, tY + 1) != ChessModel.EMPTY) {
-                            squareColors[tX + 1][tY + 1] = ChessModel.BLUE;
-                        }
-                        if (tX > 0 && ChessModel.getInstance().getFieldContent(tX - 1, tY + 1) != ChessModel.EMPTY) {
-                            squareColors[tX - 1][tY + 1] = ChessModel.BLUE;
+                        if (tX == 7 && ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whitePawn) {
+                            ChessModel.getInstance().setFieldContent(tX, tY, ChessModel.whiteQueen);
                         }
                     }
 
-                    else {
-                        for (int i = 0; i < 8; i++) {
-                            for (int j = 0; j < 8; j++) {
-                                if (i != tX || j != tY)
-                                    squareColors[i][j] = ChessModel.BLUE;
-                            }
-                        }
-                    }
-//
-//                    // White Rook
-//                    if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.whiteRook) {
-//                        for (int i = -1; i < 2; i++) {
-//                            for (int j = -1; j < 2; j++) {
-//                                if (i != 0 || j != 0) {
-//                                    int x = tX;
-//                                    int y = tY;
-//                                    while (x + i < 8 && x + i > -1
-//                                            && y + j < 8 && y + j > -1
-//                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
-//                                            != ChessModel.EMPTY) {
-//                                        x += i;
-//                                        y += j;
-//
-//                                        squareColors[x][y] = ChessModel.BLUE;
-//
-//                                    }
-//                                    if (x + i < 8 && x + i > -1
-//                                            && y + j < 8 && y + j > -1
-//                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
-//                                            > 5)  {
-//                                        squareColors[x + i][y + j] = ChessModel.BLUE;
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//
-//                    // Black Rook
-//                    if (ChessModel.getInstance().getFieldContent(tX, tY) == ChessModel.blackRook) {
-//                        for (int i = -1; i < 2; i++) {
-//                            for (int j = -1; j < 2; j++) {
-//                                if (i != 0 || j != 0) {
-//                                    int x = tX;
-//                                    int y = tY;
-//                                    while (x + i < 8 && x + i > -1
-//                                            && y + j < 8 && y + j > -1
-//                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
-//                                            != ChessModel.EMPTY) {
-//                                        x += i;
-//                                        y += j;
-//
-//                                        squareColors[x][y] = ChessModel.BLUE;
-//
-//                                    }
-//                                    if (x + i < 8 && x + i > -1
-//                                            && y + j < 8 && y + j > -1
-//                                            && ChessModel.getInstance().getFieldContent(x + i, y + j)
-//                                            < 6)  {
-//                                        squareColors[x + i][y + j] = ChessModel.BLUE;
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
+                    resetSquareColors();
 
+                    nextTouch = SELECT;
                 }
-                nextTouch = MOVE;
 
-            }
 
-            else {
-                int toMoveX = -1;
-                int toMoveY = -1;
-                for (int i = 0; i < 8; i ++) {
-                    for (int j = 0; j < 8; j++) {
-                        if (squareColors[i][j] == ChessModel.YELLOW) {
-                            toMoveX = i;
-                            toMoveY = j;
-                        }
-                    }
-                }
-
-                ChessModel.getInstance().setFieldContent(tX, tY, ChessModel.getInstance().getFieldContent(toMoveX, toMoveY));
-
-                resetSquareColors();
-
-                nextTouch = SELECT;
             }
         }
+
         invalidate();
 
         return super.onTouchEvent(event);
+    }
+
+
+
+    private void drawGameArea(Canvas canvas) {
+
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (squareColors[i][j] == ChessModel.BLUE)
+                    canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
+                            (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgBlue);
+                else if (squareColors[i][j] == ChessModel.YELLOW)
+                    canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
+                            (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgYellow);
+                else if ((i + j) % 2 != 0) {
+                    canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
+                            (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgWhite);
+                }
+            }
+        }
     }
 
     private void resetSquareColors() {
@@ -325,23 +580,32 @@ public class ChessBoardView extends View {
         }
     }
 
-    private void drawGameArea(Canvas canvas, int [][] specialColors) {
-        // border
-        //canvas.drawRect(0, 0, getWidth(), getHeight(), paintLine);
-        // White Squares
+    private int getPieceColor(int a) {
+        if (a < 6)
+            return ChessModel.WHITE;
+        if (a < 12)
+            return ChessModel.BLACK;
+        return ChessModel.EMPTY;
+    }
+
+    private int isWinner() {
+        boolean isWhiteKing = false;
+        boolean isBlackKing = false;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (specialColors[i][j] == ChessModel.BLUE)
-                canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
-                        (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgBlue);
-                else if (specialColors[i][j] == ChessModel.YELLOW)
-                canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
-                        (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgYellow);
-                else if ((i + j) % 2 != 0) {
-                    canvas.drawRect((i) * getWidth() / 8, (j) * getWidth() / 8,
-                            (i+1) * getWidth() / 8, (1+j) * getHeight() / 8, paintBgWhite);
-                }
+                if (ChessModel.getInstance().getFieldContent(i, j) == ChessModel.whiteKing)
+                    isWhiteKing = true;
+                if (ChessModel.getInstance().getFieldContent(i, j) == ChessModel.blackKing)
+                    isBlackKing = true;
             }
         }
+        if (isWhiteKing && !isBlackKing)
+            winner = ChessModel.WHITE;
+
+        if (isBlackKing && !isWhiteKing)
+            winner = ChessModel.BLACK;
+
+        return winner;
     }
+
 }

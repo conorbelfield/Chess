@@ -1,4 +1,4 @@
-package com.ait.android.chess;
+package com.ait.android.chess.Data;
 
 /**
  * Created by ConorBelfield on 12/6/17.
@@ -11,8 +11,10 @@ public class ChessModel {
     private ChessModel() {}
 
     public static ChessModel getInstance() {
-        if (chessModel == null)
-            return new ChessModel();
+        if (chessModel == null) {
+            chessModel = new ChessModel();
+        }
+
         return chessModel;
     }
 
@@ -77,5 +79,9 @@ public class ChessModel {
         };
 
         nextPlayer = WHITE;
+    }
+
+    public ChessModel getInitChessModel(){
+        return new ChessModel();
     }
 }
